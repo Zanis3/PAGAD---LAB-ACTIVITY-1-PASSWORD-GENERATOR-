@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+    <div class="password-generator-container">
+        <div class="header">
+            <h2>Password Generator</h2>
+        </div>
+
+        <div class="password-text-container">
+            <div class="text-content">
+                <b><p id="password-content"></p></b>
+            </div>
+            <div class="copy-button-container">
+                <button class="material-icons" id="copy-password">content_copy</button>
+            </div>
+        </div>
+
+        <div class="length-slider">
+            <span>
+                <p>Password Length</p>
+                <p id="length-amount">30</p>
+            </span>
+            <input type="range" name="passwordRange" id="password-range" min="8" max="30" value="30">
+        </div>
+
+        <div class="password-settings">
+            <p>Password Settings</p>
+            <span>
+                <span class="checkbox">
+                    <input type="checkbox" name="chkLowercase" id="lowercase-check">
+                    <p>Lowercase (a-z)</p>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="chkUppercase" id="uppercase-check">
+                    <p>Uppercase (A-Z)</p>
+                </span>
+            </span>
+            <span>
+                <span class="checkbox">
+                    <input type="checkbox" name="chkNumbers" id="numbers-check">
+                    <p>Numbers (0-9)</p>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="chkSymbols" id="symbols-check">
+                    <p>Symbols (!-$^+)</p>
+                </span>
+            </span>
+            <span>
+                <span class="checkbox">
+                    <input type="checkbox" name="chkDuplicates" id="duplicate-check">
+                    <p>Exclude Duplicate</p>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="chkSpaces" id="spaces-check">
+                    <p>Include Spaces</p>
+                </span>
+            </span>
+        </div>
+
+        <div class="generate-button">
+            <button id="generate-password">Generate Button</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
