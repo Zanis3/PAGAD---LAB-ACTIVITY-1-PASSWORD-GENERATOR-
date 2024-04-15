@@ -26,9 +26,9 @@
         <div class="length-slider">
             <span>
                 <p>Password Length</p>
-                <p id="length-amount">30</p>
+                <p id="length-amount">00</p>
             </span>
-            <input type="range" name="passwordRange" id="password-range" min="8" max="30" value="30">
+            <input type="range" id="password-range" min="8" max="30">
         </div>
 
         <div class="password-settings">
@@ -55,10 +55,6 @@
             </span>
             <span>
                 <span class="checkbox">
-                    <input type="checkbox" name="chkDuplicates" id="duplicate-check">
-                    <p>Exclude Duplicate</p>
-                </span>
-                <span class="checkbox">
                     <input type="checkbox" name="chkSpaces" id="spaces-check">
                     <p>Include Spaces</p>
                 </span>
@@ -69,7 +65,7 @@
             <button id="generate-password">Generate Button</button>
         </div>
     </div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>

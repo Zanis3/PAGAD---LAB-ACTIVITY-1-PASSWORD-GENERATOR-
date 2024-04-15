@@ -1,13 +1,15 @@
 const pass = document.getElementById("password-content");
-const length = document.getElementById("length-amount");
 const slider = document.getElementById("password-range");
-const copy = document.getElementById("copy-password");
+const length = document.getElementById("length-amount");
+
+slider.addEventListener('input', function() {
+    length.textContent = slider.value;
+})
 
 const lowercaseCheck = document.getElementById("lowercase-check");
 const uppercaseCheck = document.getElementById("uppercase-check");
 const numbersCheck = document.getElementById("numbers-check");
 const symbolsCheck = document.getElementById("symbols-check");
-const duplicateCheck = document.getElementById("duplicate-check");
 const spaceCheck = document.getElementById("spaces-check");
 
 const uppercases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -17,9 +19,11 @@ const symbols = "!@#$%^&*()?/<>,.;:'[}]{_-=";
 const space = " ";
 
 const generateButton = document.getElementById("generate-password");
-
 generateButton.addEventListener('click', generatePassword);
-copyButton.addEventListener('click', copyPassword);
+
+const copy = document.getElementById("copy-password");
+const copyTextAlert = document.getElementById("copied-sentence");
+copy.addEventListener('click', copyPassword);
 
 function generatePassword(){
     let passwordLength = slider.value;
@@ -60,10 +64,8 @@ function generatePassword(){
     pass.textContent = password;
 }
 
-function copyPassword(){
-
+async function copyPassword() {
+    if (navigator.clipboard) {
+        await navigator.clipboard.writeText(pass.textContent);
+    }
 }
-
-slider.addEventListener('input', function() {
-    length.textContent = slider.value;
-})
